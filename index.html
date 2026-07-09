@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Highgrove Development Group — Ground-Up Residential Development · Dallas–Fort Worth & Tulsa</title>
+<meta name="description" content="Highgrove Development Group is a Texas-based ground-up residential developer. We source land off-market, underwrite every project twice to a disciplined proforma, and build new homes in Dallas–Fort Worth and Tulsa. Capital partners are repaid first.">
+<link rel="canonical" href="https://buildhighgrove.com/">
+<meta property="og:title" content="Highgrove Development Group">
+<meta property="og:description" content="Ground-up residential development in Dallas–Fort Worth & Tulsa. We buy land below an underwritten ceiling — or not at all.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildhighgrove.com/">
+<meta property="og:image" content="https://buildhighgrove.com/og.png">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="120" fill="%231F513F"/><g stroke="%23F5F1E8" stroke-width="22" fill="none" stroke-linecap="square"><line x1="392" y1="292" x2="392" y2="732"/><line x1="420" y1="292" x2="420" y2="732"/><line x1="604" y1="292" x2="604" y2="732"/><line x1="632" y1="292" x2="632" y2="732"/><line x1="368" y1="292" x2="444" y2="292"/><line x1="368" y1="732" x2="444" y2="732"/><line x1="580" y1="292" x2="656" y2="292"/><line x1="580" y1="732" x2="656" y2="732"/><line x1="420" y1="498" x2="466" y2="498"/><line x1="558" y1="498" x2="604" y2="498"/><line x1="420" y1="526" x2="466" y2="526"/><line x1="558" y1="526" x2="604" y2="526"/></g><rect x="494" y="494" width="36" height="36" transform="rotate(45 512 512)" fill="%23F5F1E8"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1F513F; --green-deep:#16382C; --ink:#111111; --ivory:#F5F1E8;
+  --ivory-soft:#FAF8F2; --brass:#B08D57; --brass-soft:#C6A876; --line:rgba(17,17,17,.12);
+  --serif:'Playfair Display', Didot, Georgia, serif;
+  --sans:'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--green);color:var(--ivory)}
+
+/* ---------- shared ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+.kicker{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--brass)}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.15;letter-spacing:.01em;margin:18px 0 22px}
+.lead{font-size:1.06rem;font-weight:300;max-width:640px;color:rgba(17,17,17,.72)}
+.on-green .lead{color:rgba(245,241,232,.78)}
+section{padding:110px 0}
+.diamond{display:inline-block;width:9px;height:9px;background:var(--brass);transform:rotate(45deg)}
+.rule-diamond{display:flex;align-items:center;gap:18px;margin:26px 0}
+.rule-diamond::before,.rule-diamond::after{content:"";height:1px;flex:0 0 72px;background:currentColor;opacity:.5}
+body.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+body.js .reveal.in{opacity:1;transform:none}
+.btn{display:inline-block;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:18px 34px;transition:all .3s ease}
+.btn-brass{background:var(--brass);color:#fff}
+.btn-brass:hover{background:var(--brass-soft);color:var(--ink)}
+.btn-ghost{border:1px solid rgba(245,241,232,.5);color:var(--ivory)}
+.btn-ghost:hover{border-color:var(--ivory);background:rgba(245,241,232,.08)}
+.btn-ghost-dark{border:1px solid rgba(17,17,17,.35);color:var(--ink)}
+.btn-ghost-dark:hover{border-color:var(--ink);background:rgba(17,17,17,.04)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;transition:all .35s ease}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+nav.scrolled{background:rgba(22,56,44,.97);padding:14px 0;box-shadow:0 1px 0 rgba(245,241,232,.12)}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-mono{width:30px;height:30px;flex:0 0 30px}
+.nav-word{font-family:var(--serif);color:var(--ivory);font-size:1.02rem;letter-spacing:.32em;text-transform:uppercase;white-space:nowrap}
+.nav-word span{font-size:.62rem;letter-spacing:.3em;color:var(--brass-soft);display:block;margin-top:1px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,241,232,.75);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--ivory)}
+.nav-cta{border:1px solid var(--brass);color:var(--brass-soft)!important;padding:10px 18px}
+.nav-cta:hover{background:var(--brass);color:#fff!important}
+.cta-short{display:none}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:1.5px;background:var(--ivory);margin:5px 0;transition:.3s}
+.m-menu{position:fixed;inset:0;background:var(--green-deep);z-index:49;display:none;flex-direction:column;justify-content:center;align-items:center;gap:34px}
+.m-menu.open{display:flex}
+.m-menu a{font-family:var(--serif);font-size:1.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);text-decoration:none}
+@media(max-width:900px){
+  .nav-links a:not(.nav-cta){display:none}
+  .menu-btn{display:block}
+  .cta-full{display:none}.cta-short{display:inline}
+  .nav-cta{white-space:nowrap;padding:9px 14px}
+}
+
+/* ---------- hero ---------- */
+header{min-height:100svh;background:var(--green);color:var(--ivory);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:140px 6vw 90px;overflow:hidden}
+header::after{content:"";position:absolute;inset:26px;border:1px solid rgba(245,241,232,.14);pointer-events:none}
+.hero-word{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,7.2vw,5.4rem);letter-spacing:.22em;text-transform:uppercase;text-indent:.22em;line-height:1.05}
+.hero-sub{font-family:var(--serif);font-size:clamp(.9rem,1.9vw,1.35rem);letter-spacing:.5em;text-indent:.5em;text-transform:uppercase;color:rgba(245,241,232,.85);margin-top:16px}
+.hero-divider{display:flex;align-items:center;gap:20px;justify-content:center;margin:34px 0}
+.hero-divider::before,.hero-divider::after{content:"";height:1px;width:90px;background:rgba(245,241,232,.55)}
+.hero-thesis{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:400;max-width:720px;color:var(--ivory)}
+.hero-line2{font-size:.95rem;font-weight:300;letter-spacing:.04em;color:rgba(245,241,232,.7);margin-top:14px}
+.hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;justify-content:center}
+.scroll-cue{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:1px;height:52px;background:linear-gradient(rgba(245,241,232,0),rgba(245,241,232,.7));animation:cue 2.4s ease infinite}
+@keyframes cue{0%,100%{opacity:.35}50%{opacity:1}}
+@media(max-width:600px){
+  .hero-word{letter-spacing:.12em;text-indent:.12em;font-size:clamp(2rem,10.5vw,2.6rem)}
+  .hero-sub{letter-spacing:.3em;text-indent:.3em;font-size:.72rem}
+  .nav-word{font-size:.82rem;letter-spacing:.2em}
+  .nav-word span{font-size:.5rem}
+  section{padding:78px 0}
+  .hero-ctas .btn{padding:15px 22px;font-size:.7rem}
+  h2{font-size:clamp(1.62rem,6.8vw,2rem)}
+}
+
+/* ---------- stat band ---------- */
+.stats{background:var(--ivory);padding:74px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,3.6vw,3rem);color:var(--green);line-height:1}
+.stat small{display:block;margin-top:10px;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(17,17,17,.62)}
+.stat-note{margin-top:40px;font-size:.72rem;color:rgba(17,17,17,.45)}
+@media(max-width:900px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- discipline ---------- */
+.gates{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);margin-top:34px}
+.gate{padding:38px 42px 38px 0;border-bottom:1px solid var(--line);display:flex;gap:26px}
+.gate:nth-child(odd){border-right:1px solid var(--line);padding-right:42px}
+.gate:nth-child(even){padding-left:42px}
+.gate .no{font-family:var(--serif);color:var(--brass);font-size:1.05rem;flex:0 0 34px}
+.gate h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;margin-bottom:8px}
+.gate p{font-size:.92rem;color:rgba(17,17,17,.65)}
+.pull{margin-top:64px;text-align:center}
+.pull q{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);quotes:"“" "”";color:var(--green)}
+@media(max-width:900px){.gates{grid-template-columns:1fr}.gate,.gate:nth-child(odd),.gate:nth-child(even){padding:30px 0;border-right:none}}
+
+/* ---------- structure / waterfall ---------- */
+.structure{background:var(--green);color:var(--ivory)}
+.wf{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(245,241,232,.22)}
+.wf-step{padding:40px 30px 44px;border-right:1px solid rgba(245,241,232,.22);position:relative}
+.wf-step:last-child{border-right:none}
+.wf-step .no{font-family:var(--serif);font-size:2.6rem;color:var(--brass-soft);line-height:1}
+.wf-step h3{font-family:var(--serif);font-weight:500;font-size:1.14rem;margin:16px 0 10px;letter-spacing:.02em}
+.wf-step p{font-size:.88rem;color:rgba(245,241,232,.72)}
+.structure .fine{margin-top:34px;font-size:.86rem;color:rgba(245,241,232,.6);max-width:760px}
+@media(max-width:900px){.wf{grid-template-columns:1fr}.wf-step{border-right:none;border-bottom:1px solid rgba(245,241,232,.22)}.wf-step:last-child{border-bottom:none}}
+
+/* ---------- markets ---------- */
+.markets{background:var(--ivory-soft)}
+.mkt-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:48px}
+.mkt{background:#fff;border:1px solid var(--line);padding:44px}
+.mkt h3{font-family:var(--serif);font-weight:500;font-size:1.6rem}
+.mkt .sub{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 26px}
+.mkt table{width:100%;border-collapse:collapse;font-size:.9rem}
+.mkt th{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(17,17,17,.5);text-align:left;padding:0 0 12px}
+.mkt th:last-child,.mkt td:last-child{text-align:right}
+.mkt td{padding:11px 0;border-top:1px solid var(--line)}
+.mkt td b{font-weight:500;font-family:var(--serif);font-size:1.02rem;color:var(--green)}
+.mkt .src{margin-top:22px;font-size:.7rem;color:rgba(17,17,17,.45)}
+@media(max-width:900px){.mkt-grid{grid-template-columns:1fr}}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:54px}
+.step .glyph{height:56px;display:flex;align-items:flex-end;margin-bottom:20px}
+.step .glyph .no{font-family:var(--serif);font-size:2.6rem;color:var(--brass);line-height:1}
+.step h3{font-family:var(--serif);font-weight:500;font-size:1.18rem;margin-bottom:10px}
+.step p{font-size:.9rem;color:rgba(17,17,17,.65)}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ---------- principal ---------- */
+.principal{background:#fff;border-top:1px solid var(--line)}
+.pr-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.pr-mono{display:flex;justify-content:center}
+.pr-mono svg{width:min(300px,60vw)}
+.pr-name{font-family:var(--serif);font-size:1.35rem;font-weight:500;margin-top:26px}
+.pr-role{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-top:5px}
+@media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
+
+/* ---------- invest cta ---------- */
+.invest{background:var(--green-deep);color:var(--ivory);text-align:center}
+.invest h2{max-width:760px;margin-left:auto;margin-right:auto}
+.invest .lead{margin:0 auto}
+.invest .btn{margin-top:40px}
+.invest .contact-line{margin-top:26px;font-size:.86rem;color:rgba(245,241,232,.6)}
+.invest .contact-line a{color:var(--brass-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:.5px;letter-spacing:.06em}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(245,241,232,.55);padding:64px 0 40px;font-size:.8rem}
+.foot-top{display:flex;justify-content:space-between;gap:30px;align-items:center;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(245,241,232,.12)}
+.foot-word{font-family:var(--serif);color:var(--ivory);letter-spacing:.3em;text-transform:uppercase;font-size:.95rem}
+.foot-links{display:flex;gap:18px 26px;flex-wrap:wrap;justify-content:flex-end}
+.foot-links a{color:rgba(245,241,232,.55);text-decoration:none;letter-spacing:.14em;text-transform:uppercase;font-size:.68rem}
+.foot-links a:hover{color:var(--ivory)}
+.disclaimer{margin-top:30px;font-size:.72rem;line-height:1.7;color:rgba(245,241,232,.55);max-width:980px}
+.copy{margin-top:22px;font-size:.68rem;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="nav-brand" href="#top" aria-label="Highgrove Development Group — home">
+      <svg class="nav-mono" viewBox="0 0 1024 1024" aria-hidden="true">
+        <g fill="#B08D57">
+          <rect x="330" y="272" width="152" height="26"/>
+          <rect x="380" y="272" width="30" height="480"/>
+          <rect x="614" y="272" width="30" height="480"/>
+          <rect x="330" y="726" width="152" height="26"/>
+          <rect x="542" y="272" width="152" height="26"/>
+          <rect x="542" y="726" width="152" height="26"/>
+          <rect x="410" y="486" width="58" height="26"/>
+          <rect x="556" y="486" width="58" height="26"/>
+        </g>
+        <rect x="482" y="469" width="60" height="60" transform="rotate(45 512 499)" fill="#B08D57"/>
+      </svg>
+      <span class="nav-word">Highgrove<span>Development Group</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#discipline">Discipline</a>
+      <a href="#structure">Structure</a>
+      <a href="#markets">Markets</a>
+      <a href="#process">Process</a>
+      <a href="#firm">The Firm</a>
+      <a class="nav-cta" href="#investors"><span class="cta-full">Investor Brief</span><span class="cta-short">Invest</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="m-menu" id="mMenu">
+  <a href="#discipline">Discipline</a><a href="#structure">Structure</a><a href="#markets">Markets</a><a href="#process">Process</a><a href="#firm">The Firm</a><a href="#investors">Investors</a>
+</div>
+
+<header id="top">
+  <h1>
+    <div class="hero-word">Highgrove</div>
+    <div class="hero-sub">Development Group</div>
+  </h1>
+  <div class="hero-divider"><span class="diamond"></span></div>
+  <p class="hero-thesis">We buy land below an underwritten ceiling — or not at all.</p>
+  <p class="hero-line2">Ground-up residential development · Dallas–Fort Worth &amp; Tulsa</p>
+  <div class="hero-ctas">
+    <a class="btn btn-brass" href="#investors">Request the Investor Brief</a>
+    <a class="btn btn-ghost" href="#discipline">Our Discipline</a>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat reveal"><b>20%</b><small>Minimum modeled return, every project</small></div>
+      <div class="stat reveal"><b>20%</b><small>Maximum land basis, % of finished value</small></div>
+      <div class="stat reveal"><b>Twice</b><small>Every underwrite rebuilt &amp; rechecked</small></div>
+      <div class="stat reveal"><b>244 / 0</b><small>Listings screened last sweep · passed</small></div>
+    </div>
+    <p class="stat-note reveal">Latest weekly screen: on-market Dallas &amp; Tulsa land and teardowns, week of July 6, 2026. Zero met our bar — so we source off-market instead. Discipline is the product.<br>The 20% figure is a modeled underwriting threshold a project must clear before we buy land — not a guarantee, projection, or an investor’s preferred return, which is set per project.</p>
+  </div>
+</div>
+
+<section id="discipline">
+  <div class="wrap">
+    <p class="kicker reveal">01 · The Discipline</p>
+    <h2 class="reveal">Most deals fail our math.<br>That is the point.</h2>
+    <p class="lead reveal">Every parcel passes a fixed set of gates before we commit a dollar. The gates are stricter than most lenders require — and they do not flex for enthusiasm, momentum, or a good story.</p>
+    <div class="gates">
+      <div class="gate reveal"><span class="no">I</span><div><h3>Closed comparables only</h3><p>Value is set by recently sold new construction near the site — taken from the lowest matched sales, then discounted a further 10%. Never by listings, projections, or optimism.</p></div></div>
+      <div class="gate reveal"><span class="no">II</span><div><h3>Full-cost honesty</h3><p>Construction, contingency, financing at today's real note rates, carry, demolition, utilities — every line is in the model before we look at the answer.</p></div></div>
+      <div class="gate reveal"><span class="no">III</span><div><h3>A hard ceiling on land</h3><p>The model produces a maximum land price at which the project clears a 20% modeled return. We offer at or below that ceiling — or we pass.</p></div></div>
+      <div class="gate reveal"><span class="no">IV</span><div><h3>Rebuilt before we sign</h3><p>Every underwrite is rebuilt from scratch in a second model before an offer is signed. If the two disagree by even a dollar, nothing moves forward.</p></div></div>
+      <div class="gate reveal"><span class="no">V</span><div><h3>Site screens before offers</h3><p>Historic and conservation overlays, demolition restrictions, and FEMA flood zones are checked against public GIS records before a single conversation begins.</p></div></div>
+      <div class="gate reveal"><span class="no">VI</span><div><h3>Cost-plus construction</h3><p>We build with licensed builders under transparent cost-plus contracts, with statutory retainage and lien-waiver protocols on every draw.</p></div></div>
+    </div>
+    <div class="pull reveal"><q>The gate does not bend.</q></div>
+  </div>
+</section>
+
+<section class="structure on-green" id="structure">
+  <div class="wrap">
+    <p class="kicker reveal">02 · The Structure</p>
+    <h2 class="reveal">Capital partners are repaid first.<br>Before a dollar of profit reaches us.</h2>
+    <p class="lead reveal">Each project lives in its own limited liability company, with the order of payment fixed in writing before any money moves. A standard development waterfall — debt, then capital, then preferred return, then profit — sized for a single project instead of a fund.</p>
+    <div class="wf">
+      <div class="wf-step reveal"><span class="no">1</span><h3>Construction loan retired</h3><p>The project's lender is repaid in full at sale.</p></div>
+      <div class="wf-step reveal"><span class="no">2</span><h3>Capital returned</h3><p>Our investor's contribution comes back — one hundred percent of it — before anything else.</p></div>
+      <div class="wf-step reveal"><span class="no">3</span><h3>Preferred return paid</h3><p>Investors then earn an agreed preferred return on their capital.</p></div>
+      <div class="wf-step reveal"><span class="no">4</span><h3>Profit is split</h3><p>Only then is remaining profit divided between capital and operator, on pre-agreed terms.</p></div>
+    </div>
+    <p class="fine reveal">Investors participate in individual projects — never in the operating company. Control and capital stay separate, each deal is ring-fenced in its own entity, and every number is agreed in writing before closing. It is the arrangement that keeps partnerships intact.</p>
+  </div>
+</section>
+
+<section class="markets" id="markets">
+  <div class="wrap">
+    <p class="kicker reveal">03 · The Markets</p>
+    <h2 class="reveal">Two markets. One standard.</h2>
+    <p class="lead reveal">We underwrite infill neighborhoods where new construction is actually selling — verified against county appraisal records and closed sales, block by block.</p>
+    <div class="mkt-grid">
+      <div class="mkt reveal">
+        <h3>Dallas–Fort Worth</h3>
+        <p class="sub">Primary Market · Infill Spec &amp; Duplex</p>
+        <table>
+          <tr><th>Submarket</th><th>ZIP</th><th>New-build median $/SF (assessed)</th></tr>
+          <tr><td>Love Field / NW Dallas</td><td>75220</td><td><b>$348</b></td></tr>
+          <tr><td>Oak Lawn / Turtle Creek</td><td>75219</td><td><b>$321</b></td></tr>
+          <tr><td>Uptown / East Village</td><td>75204</td><td><b>$313</b></td></tr>
+          <tr><td>West Dallas</td><td>75212</td><td><b>$225</b></td></tr>
+          <tr><td>East Dallas</td><td>75223</td><td><b>$200</b></td></tr>
+        </table>
+        <p class="src">Median assessed value per square foot, new construction built 2022 or later — Dallas County appraisal records, 2026 tax year (valuation date Jan 1, 2026), retrieved July 2026.</p>
+      </div>
+      <div class="mkt reveal">
+        <h3>Tulsa</h3>
+        <p class="sub">Second Market · Midtown Infill</p>
+        <table>
+          <tr><th>Submarket</th><th>ZIP</th><th>New-build median $/SF (assessed)</th></tr>
+          <tr><td>Brookside / Midtown</td><td>74105</td><td><b>$267</b></td></tr>
+        </table>
+        <p class="src">Median assessed value per square foot, new construction built 2020 or later — Tulsa County assessor records, 2026 tax year, retrieved July 2026.</p>
+        <p style="margin-top:26px;font-size:.9rem;color:rgba(17,17,17,.65)">Tulsa offers land at a fraction of Dallas pricing, a city program of pre-approved plan sets for fast permitting — and family on the ground. We expand there as each project clears the same gates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <p class="kicker reveal">04 · The Process</p>
+    <h2 class="reveal">Source. Underwrite. Build. Exit.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="glyph"><span class="no">1</span></div>
+        <h3>Source off-market</h3><p>We go directly to landowners in our target neighborhoods — parcels identified from county records, not listings. The margin lives where there is no bidding war.</p>
+      </div>
+      <div class="step reveal">
+        <div class="glyph"><span class="no">2</span></div>
+        <h3>Underwrite twice</h3><p>Closed comps, full costs, real financing — computed, then rebuilt from scratch in a second model. The model sets the maximum price; we never negotiate above it.</p>
+      </div>
+      <div class="step reveal">
+        <div class="glyph"><span class="no">3</span></div>
+        <h3>Build cost-plus</h3><p>Licensed builders under transparent cost-plus contracts. Statutory retainage held on every draw, lien waivers collected before every payment.</p>
+      </div>
+      <div class="step reveal">
+        <div class="glyph"><span class="no">4</span></div>
+        <h3>Exit &amp; repeat</h3><p>Sell at market, settle the waterfall, return capital with its preferred return — and move the team to the next parcel that clears the gate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="principal" id="firm">
+  <div class="wrap pr-grid">
+    <div>
+      <p class="kicker reveal">05 · The Firm</p>
+      <h2 class="reveal">Family-founded.<br>Every number checked twice.</h2>
+      <p class="lead reveal">Highgrove is a family-founded development group headquartered in Dallas, with family on the ground in Tulsa. We pair hands-on ownership with an underwriting system built in-house — built to screen hundreds of parcels a week against county records, closed sales, and public GIS data — in its first full sweep it reviewed 244 and passed zero.</p>
+      <p class="lead reveal" style="margin-top:18px">We are deliberately small, deliberately selective, and structured from day one the way serious development is structured: ring-fenced projects, written waterfalls, cost-plus construction, and numbers that are checked twice.</p>
+      <p class="lead reveal" style="margin-top:18px">Highgrove is our first ground-up development company, and we treat that as a reason for more rigor, not less: training within a national ground-up building program, family capital committed alongside every partner dollar, and a written rule that we walk from any deal that misses the math.</p>
+      <p class="pr-name reveal">Roman Getmanenko</p>
+      <p class="pr-role reveal">Managing Member</p>
+    </div>
+    <div class="pr-mono reveal">
+      <svg viewBox="0 0 1024 1024" role="img" aria-label="Highgrove monogram">
+        <g stroke="#1F513F" stroke-width="7" fill="none" stroke-linecap="square">
+          <line x1="392" y1="292" x2="392" y2="732"/><line x1="420" y1="292" x2="420" y2="732"/>
+          <line x1="604" y1="292" x2="604" y2="732"/><line x1="632" y1="292" x2="632" y2="732"/>
+          <line x1="368" y1="292" x2="444" y2="292"/><line x1="368" y1="732" x2="444" y2="732"/>
+          <line x1="580" y1="292" x2="656" y2="292"/><line x1="580" y1="732" x2="656" y2="732"/>
+          <line x1="420" y1="498" x2="466" y2="498"/><line x1="558" y1="498" x2="604" y2="498"/>
+          <line x1="420" y1="526" x2="466" y2="526"/><line x1="558" y1="526" x2="604" y2="526"/>
+        </g>
+        <rect x="494" y="494" width="36" height="36" transform="rotate(45 512 512)" fill="#B08D57"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="invest on-green" id="investors">
+  <div class="wrap">
+    <p class="kicker reveal">06 · Capital Partners</p>
+    <h2 class="reveal">Fund the deal.<br>Never the promise.</h2>
+    <p class="lead reveal" style="max-width:640px">Our founding portfolio is now forming. If you invest in individual, fully-underwritten projects — where your capital is first out and every assumption is documented — request the Highgrove Investor Brief. It contains our full underwriting method, the waterfall, and the market data behind it.</p>
+    <a class="btn btn-brass reveal" href="mailto:contact@buildhighgrove.com?subject=Highgrove%20Investor%20Brief">Request the Investor Brief</a>
+    <p class="contact-line reveal">or write to us directly — <a href="mailto:contact@buildhighgrove.com">contact@buildhighgrove.com</a></p>
+    <p class="contact-line reveal" style="font-size:.72rem;max-width:640px;margin-left:auto;margin-right:auto">Project participation is available only to accredited investors as defined by Rule 501 of Regulation D, through existing relationships; verification is required before project-specific terms are shared.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <span class="foot-word">Highgrove ◆ Development Group</span>
+      <div class="foot-links">
+        <a href="#discipline">Discipline</a><a href="#structure">Structure</a><a href="#markets">Markets</a><a href="#process">Process</a><a href="#firm">The Firm</a><a href="#investors">Investors</a>
+      </div>
+    </div>
+    <p class="disclaimer">Highgrove Development Group LLC is a Texas limited liability company (formation filed July 2026). Nothing on this website constitutes an offer to sell, or a solicitation of an offer to buy, any security or investment. Any such offer will be made only to qualified persons through definitive written agreements for a specific project, and only where permitted by law. Real estate development involves risk, including the possible loss of capital. Modeled returns, underwriting thresholds, and market figures shown on this site are illustrative of our process only, are not guarantees, and do not predict the performance of any project or investment.</p>
+    <p class="copy">© 2026 Highgrove Development Group LLC · Dallas, Texas · contact@buildhighgrove.com</p>
+  </div>
+</footer>
+
+<script>
+document.body.classList.add('js');
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+const mb=document.getElementById('menuBtn'),mm=document.getElementById('mMenu');
+mb.addEventListener('click',()=>mm.classList.toggle('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+</script>
+</body>
+</html>
