@@ -33,7 +33,7 @@ body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;fo
 h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.15;letter-spacing:.01em;margin:18px 0 22px}
 .lead{font-size:1.06rem;font-weight:300;max-width:640px;color:rgba(17,17,17,.72)}
 .on-green .lead{color:rgba(245,241,232,.78)}
-section{padding:110px 0}
+section{padding:110px 0;scroll-margin-top:70px}
 .diamond{display:inline-block;width:9px;height:9px;background:var(--brass);transform:rotate(45deg)}
 .rule-diamond{display:flex;align-items:center;gap:18px;margin:26px 0}
 .rule-diamond::before,.rule-diamond::after{content:"";height:1px;flex:0 0 72px;background:currentColor;opacity:.5}
@@ -48,6 +48,7 @@ body.js .reveal.in{opacity:1;transform:none}
 .btn-ghost-dark:hover{border-color:var(--ink);background:rgba(17,17,17,.04)}
 
 /* ---------- nav ---------- */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--brass);z-index:60}
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;transition:all .35s ease}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
 nav.scrolled{background:rgba(22,56,44,.97);padding:14px 0;box-shadow:0 1px 0 rgba(245,241,232,.12)}
@@ -58,6 +59,7 @@ nav.scrolled{background:rgba(22,56,44,.97);padding:14px 0;box-shadow:0 1px 0 rgb
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,241,232,.75);text-decoration:none;transition:color .25s}
 .nav-links a:hover{color:var(--ivory)}
+.nav-links a.active{color:var(--ivory);border-bottom:1px solid var(--brass);padding-bottom:3px}
 .nav-cta{border:1px solid var(--brass);color:var(--brass-soft)!important;padding:10px 18px}
 .nav-cta:hover{background:var(--brass);color:#fff!important}
 .cta-short{display:none}
@@ -83,7 +85,8 @@ header::after{content:"";position:absolute;inset:26px;border:1px solid rgba(245,
 .hero-thesis{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:400;max-width:720px;color:var(--ivory)}
 .hero-line2{font-size:.95rem;font-weight:300;letter-spacing:.04em;color:rgba(245,241,232,.7);margin-top:14px}
 .hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;justify-content:center}
-.scroll-cue{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:1px;height:52px;background:linear-gradient(rgba(245,241,232,0),rgba(245,241,232,.7));animation:cue 2.4s ease infinite}
+.scroll-cue{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:1px;height:52px;background:linear-gradient(rgba(245,241,232,0),rgba(245,241,232,.7));animation:cue 2.4s ease infinite;z-index:2}
+.roofline{position:absolute;bottom:26px;left:26px;right:26px;width:calc(100% - 52px);opacity:.14;pointer-events:none}
 @keyframes cue{0%,100%{opacity:.35}50%{opacity:1}}
 @media(max-width:600px){
   .hero-word{letter-spacing:.12em;text-indent:.12em;font-size:clamp(2rem,10.5vw,2.6rem)}
@@ -111,6 +114,10 @@ header::after{content:"";position:absolute;inset:26px;border:1px solid rgba(245,
 .gate .no{font-family:var(--serif);color:var(--brass);font-size:1.05rem;flex:0 0 34px}
 .gate h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;margin-bottom:8px}
 .gate p{font-size:.92rem;color:rgba(17,17,17,.65)}
+.gate{transition:background .35s ease}
+.gate:hover{background:rgba(31,81,63,.035)}
+.gate:hover .no{color:var(--green)}
+.gate .no{transition:color .35s ease}
 .pull{margin-top:64px;text-align:center}
 .pull q{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);quotes:"“" "”";color:var(--green)}
 @media(max-width:900px){.gates{grid-template-columns:1fr}.gate,.gate:nth-child(odd),.gate:nth-child(even){padding:30px 0;border-right:none}}
@@ -123,6 +130,8 @@ header::after{content:"";position:absolute;inset:26px;border:1px solid rgba(245,
 .wf-step .no{font-family:var(--serif);font-size:2.6rem;color:var(--brass-soft);line-height:1}
 .wf-step h3{font-family:var(--serif);font-weight:500;font-size:1.14rem;margin:16px 0 10px;letter-spacing:.02em}
 .wf-step p{font-size:.88rem;color:rgba(245,241,232,.72)}
+.wf-step{transition:background .4s ease}
+.wf-step:hover{background:rgba(245,241,232,.05)}
 .structure .fine{margin-top:34px;font-size:.86rem;color:rgba(245,241,232,.6);max-width:760px}
 @media(max-width:900px){.wf{grid-template-columns:1fr}.wf-step{border-right:none;border-bottom:1px solid rgba(245,241,232,.22)}.wf-step:last-child{border-bottom:none}}
 
@@ -154,8 +163,12 @@ header::after{content:"";position:absolute;inset:26px;border:1px solid rgba(245,
 .pr-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
 .pr-mono{display:flex;justify-content:center}
 .pr-mono svg{width:min(300px,60vw)}
-.pr-name{font-family:var(--serif);font-size:1.35rem;font-weight:500;margin-top:26px}
-.pr-role{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-top:5px}
+.founders{display:flex;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.founder{flex:1;padding:22px 18px 0 0;display:flex;flex-direction:column;gap:4px}
+.founder+.founder{padding-left:24px;border-left:1px solid var(--line)}
+.f-name{font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.f-role{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.f-city{font-size:.78rem;color:rgba(17,17,17,.5)}
 @media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
 
 /* ---------- invest cta ---------- */
@@ -176,9 +189,19 @@ footer{background:var(--ink);color:rgba(245,241,232,.55);padding:64px 0 40px;fon
 .disclaimer{margin-top:30px;font-size:.72rem;line-height:1.7;color:rgba(245,241,232,.55);max-width:980px}
 .copy{margin-top:22px;font-size:.68rem;letter-spacing:.08em}
 </style>
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Highgrove Development Group",
+"legalName":"Highgrove Development Group LLC","url":"https://buildhighgrove.com",
+"email":"contact@buildhighgrove.com",
+"address":{"@type":"PostalAddress","addressLocality":"Dallas","addressRegion":"TX","addressCountry":"US"},
+"areaServed":["Dallas-Fort Worth, TX","Tulsa, OK"],
+"description":"Ground-up residential development in Dallas-Fort Worth and Tulsa. Off-market land sourcing, twice-verified underwriting, cost-plus construction, capital-first waterfall."}
+</script>
 </head>
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 <nav id="nav">
   <div class="wrap">
     <a class="nav-brand" href="#top" aria-label="Highgrove Development Group — home">
@@ -225,15 +248,34 @@ footer{background:var(--ink);color:rgba(245,241,232,.55);padding:64px 0 40px;fon
     <a class="btn btn-ghost" href="#discipline">Our Discipline</a>
   </div>
   <span class="scroll-cue" aria-hidden="true"></span>
+  <svg class="roofline" viewBox="0 0 1600 190" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <g stroke="#F5F1E8" stroke-width="1.5" fill="none" stroke-linecap="square">
+      <path d="M0 190 L0 128 L52 128 L52 96 L118 60 L184 96 L184 190"/>
+      <path d="M118 60 L118 44 L128 44 L128 66"/>
+      <path d="M184 132 L246 132 L246 190"/>
+      <path d="M246 148 L300 148 L300 106 L352 74 L404 106 L404 190"/>
+      <path d="M404 122 L470 122 L470 84 L516 84 L516 190"/>
+      <path d="M516 100 L560 100 L560 52 L636 16 L712 52 L712 190"/>
+      <path d="M636 16 L636 0 L648 0 L648 22"/>
+      <path d="M712 90 L790 90 L790 120 L836 120 L836 190"/>
+      <path d="M836 142 L884 142 L884 98 L936 70 L988 98 L988 190"/>
+      <path d="M988 118 L1044 118 L1044 88 L1090 88 L1090 190"/>
+      <path d="M1090 104 L1132 104 L1132 60 L1204 28 L1276 60 L1276 190"/>
+      <path d="M1204 28 L1204 10 L1216 10 L1216 34"/>
+      <path d="M1276 96 L1340 96 L1340 128 L1392 128 L1392 190"/>
+      <path d="M1392 144 L1444 144 L1444 108 L1494 80 L1544 108 L1544 190"/>
+      <path d="M1544 130 L1600 130 L1600 190"/>
+    </g>
+  </svg>
 </header>
 
 <div class="stats">
   <div class="wrap">
     <div class="stat-grid">
-      <div class="stat reveal"><b>20%</b><small>Minimum modeled return, every project</small></div>
-      <div class="stat reveal"><b>20%</b><small>Maximum land basis, % of finished value</small></div>
+      <div class="stat reveal"><b data-count="20" data-suffix="%">0%</b><small>Minimum modeled return, every project</small></div>
+      <div class="stat reveal"><b data-count="20" data-suffix="%">0%</b><small>Maximum land basis, % of finished value</small></div>
       <div class="stat reveal"><b>Twice</b><small>Every underwrite rebuilt &amp; rechecked</small></div>
-      <div class="stat reveal"><b>244 / 0</b><small>Listings screened last sweep · passed</small></div>
+      <div class="stat reveal"><b data-count="244" data-suffix=" / 0">0 / 0</b><small>Listings screened last sweep · passed</small></div>
     </div>
     <p class="stat-note reveal">Latest weekly screen: on-market Dallas &amp; Tulsa land and teardowns, week of July 6, 2026. Zero met our bar — so we source off-market instead. Discipline is the product.<br>The 20% figure is a modeled underwriting threshold a project must clear before we buy land — not a guarantee, projection, or an investor’s preferred return, which is set per project.</p>
   </div>
@@ -334,11 +376,14 @@ footer{background:var(--ink);color:rgba(245,241,232,.55);padding:64px 0 40px;fon
     <div>
       <p class="kicker reveal">05 · The Firm</p>
       <h2 class="reveal">Family-founded.<br>Every number checked twice.</h2>
-      <p class="lead reveal">Highgrove is a family-founded development group headquartered in Dallas, with family on the ground in Tulsa. We pair hands-on ownership with an underwriting system built in-house — built to screen hundreds of parcels a week against county records, closed sales, and public GIS data — in its first full sweep it reviewed 244 and passed zero.</p>
+      <p class="lead reveal">Highgrove was founded by three brothers — Roman in Dallas, Alex and Dmitry in Tulsa. Family capital sits alongside every partner dollar, and the family name rides on every build. We pair that ownership with an underwriting system built in-house — built to screen hundreds of parcels a week against county records, closed sales, and public GIS data. In its first full sweep it reviewed 244 and passed zero.</p>
       <p class="lead reveal" style="margin-top:18px">We are deliberately small, deliberately selective, and structured from day one the way serious development is structured: ring-fenced projects, written waterfalls, cost-plus construction, and numbers that are checked twice.</p>
       <p class="lead reveal" style="margin-top:18px">Highgrove is our first ground-up development company, and we treat that as a reason for more rigor, not less: training within a national ground-up building program, family capital committed alongside every partner dollar, and a written rule that we walk from any deal that misses the math.</p>
-      <p class="pr-name reveal">Roman Getmanenko</p>
-      <p class="pr-role reveal">Managing Member</p>
+      <div class="founders reveal">
+        <div class="founder"><span class="f-name">Roman</span><span class="f-role">Co-Founder &amp; Managing Member</span><span class="f-city">Dallas</span></div>
+        <div class="founder"><span class="f-name">Alex</span><span class="f-role">Co-Founder</span><span class="f-city">Tulsa</span></div>
+        <div class="founder"><span class="f-name">Dmitry</span><span class="f-role">Co-Founder</span><span class="f-city">Tulsa</span></div>
+      </div>
     </div>
     <div class="pr-mono reveal">
       <svg viewBox="0 0 1024 1024" role="img" aria-label="Highgrove monogram">
@@ -389,6 +434,19 @@ document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(
 const mb=document.getElementById('menuBtn'),mm=document.getElementById('mMenu');
 mb.addEventListener('click',()=>mm.classList.toggle('open'));
 mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+// brass progress hairline
+const pr=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+// scrollspy
+const spyLinks=[...document.querySelectorAll('.nav-links a[href^="#"]:not(.nav-cta)')];
+const spyIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){spyLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+['discipline','structure','markets','process','firm'].forEach(id=>{const el=document.getElementById(id);if(el)spyIO.observe(el)});
+// stat count-up
+const cntIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cntIO.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
+  const tick=t=>{const k=Math.min((t-t0)/900,1),v=Math.round(end*(1-Math.pow(1-k,3)));el.textContent=v+suf;if(k<1)requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cntIO.observe(el));
 </script>
 </body>
 </html>
